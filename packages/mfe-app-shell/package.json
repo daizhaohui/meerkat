@@ -1,0 +1,43 @@
+{
+  "name": "@meerkat/mfe-app-shell",
+  "version": "1.0.0",
+  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "keywords": [],
+  "author": "zhaohui.dai <daizhaohui@vip.sina.com>",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daizhaohui/meerkat.git"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src"
+  },
+  "bugs": {
+    "url": "https://github.com/daizhaohui/meerkat/issues"
+  },
+  "homepage": "https://github.com/daizhaohui/meerkat#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint": "^8.15.0",
+    "jest": "^28.1.0",
+    "rollup": "^2.74.1",
+    "ts-jest": "^28.0.2",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "rxjs": "^7.5.5"
+  }
+}
