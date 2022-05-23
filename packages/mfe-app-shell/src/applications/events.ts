@@ -1,21 +1,37 @@
+import { getPubsub } from "./mfeRuntime"
 
-
-export function onAppBeforeMount() {
-
+export enum EventName {
+  APP_BEFORE_MOUNT = 'onAppBeforeMount',
+  APP_MOUNTED = 'onAppMounted',
+  APP_UNMOUNTED = 'onAppUnmounted',
+  APP_CHANGED = 'onAppChanged',
+  ROUTE_CHANGED = 'onRouteChanged'
 }
 
-export function onAppMounted() {
-  
+export interface EventArg {
+  data?: Record<string, unknown>
+  name?: string 
+  appName: string
 }
 
-export function onAppUnmounted() {
-  
+export type EventHandler = (arg: EventArg) => void
+
+export function onAppBeforeMount(handler: EventHandler) {
+  getPubsub(EventName.APP_BEFORE_MOUNT)?.addSubscribe(handler)
 }
 
-export function onAppChanged() {
-  
+export function onAppMounted(handler: EventHandler) {
+  getPubsub(EventName.APP_MOUNTED)?.addSubscribe(handler)
 }
 
-export function onRouteChanged() {
-  
+export function onAppUnmounted(handler: EventHandler) {
+  getPubsub(EventName.APP_UNMOUNTED)?.addSubscribe(handler)
+}
+
+export function onAppChanged(handler: EventHandler) {
+  getPubsub(EventName.APP_CHANGED)?.addSubscribe(handler)
+}
+
+export function onRouteChanged(handler: EventHandler) {
+  getPubsub(EventName.ROUTE_CHANGED)?.addSubscribe(handler)
 }
